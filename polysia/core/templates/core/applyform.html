@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now | Polysia Careers</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Polysia</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/blog">Blog</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/careers" class="active">Careers</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Join Our Team</h1>
+        <p>Submit your application to become a part of Polysia's dynamic environment.</p>
+    </section>
+
+    <section class="form-content">
+        <form id="application-form" enctype="multipart/form-data" style="max-width: 600px; margin: 40px auto; padding: 20px; background: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+    
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="first-name" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">First Name</label>
+                <input type="text" id="first-name" name="first_name" placeholder="Enter your first name" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+            
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="last-name" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Last Name</label>
+                <input type="text" id="last-name" name="last_name" placeholder="Enter your last name" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+        
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="college" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">College</label>
+                <input type="text" id="college" name="college" placeholder="Enter your college name" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+        
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="degree" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">College Degree</label>
+                <input type="text" id="degree" name="degree" placeholder="Enter your degree" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+        
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="cgpa" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">CGPA</label>
+                <input type="text" id="cgpa" name="cgpa" placeholder="Enter your CGPA" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+        
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="resume" style="display: block; margin-bottom: 5px; font-weight: bold; color: #333;">Upload Resume</label>
+                <input type="file" id="resume" name="resume" accept="application/pdf" required 
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em;">
+            </div>
+        
+            <button type="submit" class="btn-submit" 
+                    style="width: 100%; padding: 12px; background-color: #ff6b6b; color: white; border: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background-color 0.3s ease;">
+                Submit Application
+            </button>
+        </form>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Polysia. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        document.getElementById('application-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            
+            fetch('/send-email/', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Application submitted successfully!');
+                    document.getElementById('application-form').reset();
+                } else {
+                    alert('There was an error submitting your application.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your application.');
+            });
+        });
+    </script>
+</body>
+</html>

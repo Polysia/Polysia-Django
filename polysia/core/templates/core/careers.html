@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polysia Careers | Join Our Team</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Polysia</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/blog">Blog</a>
+            <a href="/portfolio">Portfolio</a>
+            <!-- <a href="/contact">Contact</a> -->
+            <a href="/careers">Careers</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Careers at Polysia</h1>
+        <p>Shape the future of cybersecurity with us!</p>
+    </section>
+
+    <section class="careers-content">
+        <div class="career-opening">
+            <h2>Cybersecurity Analyst</h2>
+            <p>We are looking for a talented analyst to identify and mitigate potential threats...</p>
+            <a href="applyform/" class="btn-primary">Apply Now</a>
+        </div>
+        <div class="career-opening">
+            <h2>DevOps Engineer</h2>
+            <p>Join our team to streamline our security operations and deployment pipelines...</p>
+            <a href="applyform/" class="btn-primary">Apply Now</a>
+        </div>
+        <div class="career-opening">
+            <h2>Software Developer</h2>
+            <p>Passionate about building secure applications? This role is for you...</p>
+            <a href="applyform/" class="btn-primary">Apply Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Polysia. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

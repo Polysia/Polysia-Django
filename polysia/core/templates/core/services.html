@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polysia | Our Services</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Polysia</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/blog">Blog</a>
+            <a href="/portfolio">Portfolio</a>
+            <!-- <a href="/contact">Contact</a> -->
+            <a href="/careers">Careers</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Our Cybersecurity Solutions</h1>
+        <p>Empowering businesses with cutting-edge security services.</p>
+    </section>
+
+    <section class="services-section">
+        <div class="service-card">
+            <h2>Network Security</h2>
+            <p>Protecting your infrastructure from external and internal threats.</p>
+        </div>
+        <div class="service-card">
+            <h2>Cloud Security</h2>
+            <p>Secure your cloud environments with our advanced solutions.</p>
+        </div>
+        <div class="service-card">
+            <h2>Incident Response</h2>
+            <p>Fast and effective response to cyber incidents to minimize damage.</p>
+        </div>
+        <div class="service-card">
+            <h2>Penetration Testing</h2>
+            <p>Identify vulnerabilities before hackers do.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Polysia. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

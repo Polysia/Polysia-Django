@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polysia | Empowering Cybersecurity</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Polysia</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/blog">Blog</a>
+            <a href="/portfolio">Portfolio</a>
+            <a href="/careers">Careers</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Leading the Future of Cybersecurity</h1>
+        <p>Your trusted partner in securing digital realms.</p>
+        <button class="btn-primary" id="learnMoreBtn">Learn More</button>
+
+        <!-- Expandable Section -->
+        <div id="moreContent" class="hidden">
+            <p>
+                At Polysia, we leverage cutting-edge technologies to safeguard your digital assets. 
+                Our team of cybersecurity experts ensures your business stays resilient against evolving 
+                threats. Discover how we can help you achieve a secure and robust digital future.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Polysia. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+
+</html>
